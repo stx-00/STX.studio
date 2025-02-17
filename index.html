@@ -31,7 +31,7 @@
 
       .text {
         font-size: 0.875rem;
-        color: #333;
+        color: #000000;
         letter-spacing: 0.05em;
         margin: 1rem;
         font-weight: 400;
@@ -57,6 +57,18 @@
         outline: none;
         text-align: center;
         background: transparent;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      .input:focus {
+        outline: none;
+        border-bottom: 1px solid #333;
+      }
+
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: #333 !important;
       }
 
       .input::placeholder {
@@ -68,7 +80,7 @@
         font-size: 0.875rem;
         padding: 0;
         background: none;
-        color: #333;
+        color: #000000;
         border: none;
         cursor: pointer;
         letter-spacing: 0.05em;
