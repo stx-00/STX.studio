@@ -25,18 +25,102 @@
         background-color: white;
       }
 
+      .container {
+        text-align: center;
+      }
+
       .text {
         font-size: 0.875rem;
         color: #333;
         letter-spacing: 0.05em;
-        margin: 0;
+        margin: 1rem;
         font-weight: 400;
         font-optical-sizing: auto;
         font-style: normal;
       }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .input {
+        font-family: "EB Garamond", serif;
+        font-size: 0.875rem;
+        letter-spacing: 0.05em;
+        padding: 0.25rem 0;
+        width: 240px;
+        border: none;
+        border-bottom: 1px solid #333;
+        outline: none;
+        text-align: center;
+        background: transparent;
+      }
+
+      .input::placeholder {
+        color: #9eac9d;
+      }
+
+      .button {
+        font-family: "EB Garamond", serif;
+        font-size: 0.875rem;
+        padding: 0;
+        background: none;
+        color: #333;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+      }
+
+      .button span {
+        display: inline-block;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .button:hover span:nth-child(odd) {
+        transform: translateY(-1px);
+      }
+
+      .button:hover span:nth-child(even) {
+        transform: translateY(1px);
+      }
     </style>
   </head>
   <body>
-    <h1 class="text">coming soon</h1>
+    <div class="container">
+      <h1 class="text">coming soon</h1>
+      <form
+        class="form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="94304579-4867-466e-b9b7-f6159385e606"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="STX.studio Newsletter Signup"
+        />
+        <div>
+          <input
+            type="email"
+            name="email"
+            class="input"
+            placeholder="enter email for newsletter signup"
+            required
+            aria-label="Email address"
+          />
+        </div>
+        <button type="submit" class="button">
+          <span>s</span><span>u</span><span>b</span><span>s</span><span>c</span
+          ><span>r</span><span>i</span><span>b</span><span>e</span>
+        </button>
+      </form>
+    </div>
   </body>
 </html>
