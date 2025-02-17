@@ -107,11 +107,7 @@
   <body>
     <div class="container">
       <h1 class="text">coming soon</h1>
-      <form
-        class="form"
-        action="https://api.web3forms.com/submit"
-        method="POST"
-      >
+      <form class="form" id="newsletter-form">
         <input
           type="hidden"
           name="access_key"
@@ -138,5 +134,28 @@
         </button>
       </form>
     </div>
+
+    <script>
+      const form = document.getElementById("newsletter-form");
+      const container = document.querySelector(".container");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+          });
+
+          if (response.ok) {
+            container.innerHTML = '<h1 class="text">more soon</h1>';
+          }
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      });
+    </script>
   </body>
 </html>
